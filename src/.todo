@@ -1,0 +1,18 @@
+- Blog page
+    - Design (list + view)
+    - Sync with Wordpress
+- Talks page
+    - Gather all the data
+    - Design
+    - Configure custom fields in WP
+    - Add data in WP
+    - Configure the API (GraphQL?)
+- Videos page
+    - Gather all the data
+    - Design
+    - Configure custom fields in WP
+    - Add data in WP
+    - Configure the API (GraphQL?)
+- Configure DNS for frontend and WP
+- Configure GraphQL plugin
+- Checkout Zeit?
