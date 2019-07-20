@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-md-4">
       <button class="btn btn-block btn-primary mb-3" (click)="open(classic,'' , '')">
-       Default
+        Default
       </button>
       <ng-template #classic let-c="close" let-d="dismiss">
         <div class="modal-content">
@@ -17,12 +17,16 @@
             </button>
           </div>
           <div class="modal-body">
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+              blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+              ocean.</p>
+            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
+              paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary">Save changes</button>
-            <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal" (click)="c('Close click')">Close</button>
+            <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal"
+              (click)="c('Close click')">Close</button>
           </div>
         </div>
       </ng-template>
@@ -30,7 +34,7 @@
 
     <div class="col-md-4">
       <button class="btn btn-block btn-warning mb-3" (click)="open(classic2, 'Notification', '')">
-         Notification
+        Notification
       </button>
       <ng-template #classic2 let-c="close" let-d="dismiss">
         <div class="modal-content bg-gradient-danger">
@@ -49,7 +53,8 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-white">Ok, Got it</button>
-            <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal" (click)="c('Close click')">Close</button>
+            <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal"
+              (click)="c('Close click')">Close</button>
           </div>
         </div>
       </ng-template>
@@ -57,7 +62,7 @@
 
     <div class="col-md-4">
       <button class="btn btn-block btn-default" (click)="open(classic1, 'modal_mini', 'sm')">
-         Form
+        Form
       </button>
       <ng-template #classic1 let-c="close" let-d="dismiss">
         <div class="modal-content">
@@ -92,7 +97,8 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                       </div>
-                      <input class="form-control" placeholder="Email" type="email" (focus)="focus=true" (blur)="focus=false">
+                      <input class="form-control" placeholder="Email" type="email" (focus)="focus=true"
+                        (blur)="focus=false">
                     </div>
                   </div>
                   <div class="form-group" [ngClass]="{'focused':focus1===true}">
@@ -100,7 +106,8 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                       </div>
-                      <input class="form-control" placeholder="Password" type="password" (focus)="focus1=true" (blur)="focus1=false">
+                      <input class="form-control" placeholder="Password" type="password" (focus)="focus1=true"
+                        (blur)="focus1=false">
                     </div>
                   </div>
                   <div class="custom-control custom-control-alternative custom-checkbox">
@@ -130,7 +137,9 @@
           <div class="input-group-prepend">
             <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
           </div>
-          <input class="form-control datepicker" placeholder="Select date" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" (click)="d.toggle()" (focus)="focus2=true" (blur)="focus2=false" type="text" (select)="onDateSelection($event)" autocomplete="off"/>
+          <input class="form-control datepicker" placeholder="Select date" name="dp" [(ngModel)]="model" ngbDatepicker
+            #d="ngbDatepicker" (click)="d.toggle()" (focus)="focus2=true" (blur)="focus2=false" type="text"
+            (select)="onDateSelection($event)" autocomplete="off" />
         </div>
       </div>
     </div>
@@ -143,20 +152,17 @@
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
               </div>
-              <input class="form-control datepicker" placeholder="Select date" name="dp1" [(ngModel)]="model1" ngbDatepicker #d1="ngbDatepicker" (click)="d1.toggle()" (select)="mama($event)" type="text" [dayTemplate]="t" (dateSelect)="startDateChanged($event)" autocomplete="off" (focus)="focus3=true" (blur)="focus3=false"/>
-              <ng-template #t let-date let-focused="focused" >
-               <span class="custom-day"
-                [class.text-white]="isActive(date)"
-                [class.range-end]="isRangeEnd(date)"
-                [class.range-start]="isRangeStart(date)"
-                [class.btn-light]="isActive(date)"
-                [class.bg-primary]="isActive(date)"
-                [class.range]="isInRange(date)"
-                [class.faded]="isInRange(date)"
-               >
-                 {{ date.day }}
-               </span>
-             </ng-template>
+              <input class="form-control datepicker" placeholder="Select date" name="dp1" [(ngModel)]="model1"
+                ngbDatepicker #d1="ngbDatepicker" (click)="d1.toggle()" type="text" [dayTemplate]="t"
+                (dateSelect)="startDateChanged($event)" autocomplete="off" (focus)="focus3=true"
+                (blur)="focus3=false" />
+              <ng-template #t let-date let-focused="focused">
+                <span class="custom-day" [class.text-white]="isActive(date)" [class.range-end]="isRangeEnd(date)"
+                  [class.range-start]="isRangeStart(date)" [class.btn-light]="isActive(date)"
+                  [class.bg-primary]="isActive(date)" [class.range]="isInRange(date)" [class.faded]="isInRange(date)">
+                  {{ date.day }}
+                </span>
+              </ng-template>
             </div>
           </div>
         </div>
@@ -166,20 +172,16 @@
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
               </div>
-              <input class="form-control datepicker" placeholder="Select date" name="dp2" [(ngModel)]="model2" ngbDatepicker #d2="ngbDatepicker" (click)="d2.toggle()" (focus)="focus4=true" (blur)="focus4=false" type="text" [dayTemplate]="t1" (dateSelect)="endDateChanged($event)" autocomplete="off"/>
-              <ng-template #t1 let-date let-focused="focused" >
-               <span class="custom-day"
-                [class.text-white]="isActive(date)"
-                [class.range-end]="isRangeEnd(date)"
-                [class.range-start]="isRangeStart(date)"
-                [class.btn-light]="isActive(date)"
-                [class.bg-primary]="isActive(date)"
-                [class.range]="isInRange(date)"
-                [class.faded]="isInRange(date)"
-               >
-                 {{ date.day }}
-               </span>
-             </ng-template>
+              <input class="form-control datepicker" placeholder="Select date" name="dp2" [(ngModel)]="model2"
+                ngbDatepicker #d2="ngbDatepicker" (click)="d2.toggle()" (focus)="focus4=true" (blur)="focus4=false"
+                type="text" [dayTemplate]="t1" (dateSelect)="endDateChanged($event)" autocomplete="off" />
+              <ng-template #t1 let-date let-focused="focused">
+                <span class="custom-day" [class.text-white]="isActive(date)" [class.range-end]="isRangeEnd(date)"
+                  [class.range-start]="isRangeStart(date)" [class.btn-light]="isActive(date)"
+                  [class.bg-primary]="isActive(date)" [class.range]="isInRange(date)" [class.faded]="isInRange(date)">
+                  {{ date.day }}
+                </span>
+              </ng-template>
             </div>
           </div>
         </div>
@@ -191,21 +193,29 @@
   <div class="row">
     <div class="col-lg-6">
       <small class="d-block text-uppercase font-weight-bold mb-3">Tooltips</small>
-      <button type="button" class="btn btn-sm btn-primary btn-tooltip" placement="left"   ngbTooltip="Tooltip on left">On left</button>
-      <button type="button" class="btn btn-sm btn-primary btn-tooltip" placement="top"    ngbTooltip="Tooltip on top">On top</button>
-      <button type="button" class="btn btn-sm btn-primary btn-tooltip" placement="bottom" ngbTooltip="Tooltip on bottom">On bottom</button>
-      <button type="button" class="btn btn-sm btn-primary btn-tooltip" placement="right"  ngbTooltip="Tooltip on right">On right</button>
+      <button type="button" class="btn btn-sm btn-primary btn-tooltip" placement="left" ngbTooltip="Tooltip on left">On
+        left</button>
+      <button type="button" class="btn btn-sm btn-primary btn-tooltip" placement="top" ngbTooltip="Tooltip on top">On
+        top</button>
+      <button type="button" class="btn btn-sm btn-primary btn-tooltip" placement="bottom"
+        ngbTooltip="Tooltip on bottom">On bottom</button>
+      <button type="button" class="btn btn-sm btn-primary btn-tooltip" placement="right"
+        ngbTooltip="Tooltip on right">On right</button>
     </div>
     <div class="col-lg-6 mt-4 mt-lg-0">
       <small class="d-block text-uppercase font-weight-bold mb-3">Popovers</small>
       <button type="button" class="btn btn-sm btn-default" placement="left"
-              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on left">On left</button>
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on left">On
+        left</button>
       <button type="button" class="btn btn-sm btn-default" placement="top"
-              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on top">On top</button>
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on top">On
+        top</button>
       <button type="button" class="btn btn-sm btn-default" placement="right"
-              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on right">On right</button>
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on right">On
+        right</button>
       <button type="button" class="btn btn-sm btn-default" placement="bottom"
-              ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on bottom">On bottom</button>
+        ngbPopover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popoverTitle="Popover on bottom">On
+        bottom</button>
     </div>
   </div>
 </div>
