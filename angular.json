@@ -16,6 +16,7 @@
             "outputPath": "dist/argon-design-system-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "aot": true,
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
