@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { WpheadlessService } from '../wpheadless.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Talk, AllTalksGQL } from '../talks.service';
 
 @Component({
   selector: 'app-talk',
@@ -10,10 +12,14 @@ import { WpheadlessService } from '../wpheadless.service';
 export class TalkComponent implements OnInit {
   focus: any;
   focus1: any;
-  talks$ = null;
+  talks$: Observable<Talk[]> = null;
 
-  constructor(private wp: WpheadlessService) {
-    this.talks$ = wp.getTalks();
+  constructor(private allTalksGQL: AllTalksGQL) {
+    this.talks$ = this.allTalksGQL.watch()
+      .valueChanges
+      .pipe(
+        map(result => result.data.talks.nodes)
+      );
 
   }
 

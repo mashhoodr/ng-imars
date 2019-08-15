@@ -51,18 +51,19 @@
             <div class="col-lg-4" *ngFor="let talk of talks$ | async; let i = index">
               <div class="card card-lift--hover shadow border-0">
                 <div class="card-body py-5">
-                  <h6 class="text-primary text-uppercase">{{ talk.title.rendered }}</h6>
+                  <h6 class="text-primary text-uppercase">{{ talk.title }}</h6>
                   <p class="description mt-3">
-                    <strong>{{ talk.acf.conference }} | {{ talk.acf.location }}</strong>
+                    <strong>{{ talk.talkattributes.conference }} | {{ talk.talkattributes.location }}</strong>
                   </p>
-                  <p class="description mt-3" [innerHTML]="talk.content.rendered">
+                  <p class="description mt-3" [innerHTML]="talk.content">
                   </p>
                   <div>
-                    <span *ngFor="let tag of talk.tags" style="margin-right: 5px;"
-                      class="badge badge-pill badge-primary">{{tag}}</span>
+                    <span *ngFor="let tag of talk.tags.nodes" style="margin-right: 5px;"
+                      class="badge badge-pill badge-primary">{{tag.name}}</span>
                   </div>
-                  <a *ngIf="talk.acf.slides_url" [href]="talk.acf.slides_url" class="btn btn-primary mt-4">Slides</a>
-                  <a *ngIf="talk.acf.youtube_link" [href]="talk.acf.youtube_link"
+                  <a *ngIf="talk.talkattributes.slidesUrl" [href]="talk.talkattributes.slidesUrl"
+                    class="btn btn-primary mt-4">Slides</a>
+                  <a *ngIf="talk.talkattributes.youtubeLink" [href]="talk.talkattributes.youtubeLink"
                     class="btn btn-secondary mt-4">Video</a>
                 </div>
               </div>

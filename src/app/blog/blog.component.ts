@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { WpheadlessService } from '../wpheadless.service';
-
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Post, AllPostsGQL } from '../posts.service';
 
 @Component({
     selector: 'app-blog',
@@ -10,10 +11,14 @@ import { WpheadlessService } from '../wpheadless.service';
 
 export class BlogComponent implements OnInit {
 
-    posts$ = null;
+    posts$: Observable<Post[]>;
 
-    constructor(private wp: WpheadlessService) {
-        this.posts$ = wp.getPosts();
+    constructor(private allPostsGQL: AllPostsGQL) {
+        this.posts$ = this.allPostsGQL.watch()
+            .valueChanges
+            .pipe(
+                map(result => result.data.posts.nodes)
+            );
     }
 
     ngOnInit() { }
