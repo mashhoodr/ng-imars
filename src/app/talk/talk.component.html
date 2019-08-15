@@ -1,0 +1,75 @@
+<main>
+  <div class="position-relative">
+    <!-- shape Hero -->
+    <section class="section section-lg section-shaped pb-250">
+      <div class="shape shape-style-1 shape-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="container py-lg-md d-flex">
+        <div class="col px-0">
+          <div class="row">
+            <div class="col-lg-6">
+              <h1 class="display-3  text-white">
+                Speaking / Training
+              </h1>
+              <p class="lead  text-white">
+                I am regularly speaking / training / mentoring in web technologies all over the world.
+              </p>
+              <div class="btn-wrapper">
+                <a href="mailto:mashhoodr@gmail.com" class="btn btn-white btn-icon mb-3 mb-sm-0">
+                  <span class="btn-inner--icon"><i class="ni ni-cloud-download-95"></i></span>
+                  <span class="btn-inner--text">Contact me</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SVG separator -->
+      <div class="separator separator-bottom separator-skew">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+          xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </section>
+    <!-- 1st Hero Variation -->
+  </div>
+  <section class="section section-lg pt-lg-0 mt--200">
+    <div class="container">
+      <div class="row justify-content-center py-8">
+        <div class="col-lg-12">
+          <div class="row row-grid">
+            <div class="col-lg-4" *ngFor="let talk of talks$ | async; let i = index">
+              <div class="card card-lift--hover shadow border-0">
+                <div class="card-body py-5">
+                  <h6 class="text-primary text-uppercase">{{ talk.title.rendered }}</h6>
+                  <p class="description mt-3">
+                    <strong>{{ talk.acf.conference }} | {{ talk.acf.location }}</strong>
+                  </p>
+                  <p class="description mt-3" [innerHTML]="talk.content.rendered">
+                  </p>
+                  <div>
+                    <span *ngFor="let tag of talk.tags" style="margin-right: 5px;"
+                      class="badge badge-pill badge-primary">{{tag}}</span>
+                  </div>
+                  <a *ngIf="talk.acf.slides_url" [href]="talk.acf.slides_url" class="btn btn-primary mt-4">Slides</a>
+                  <a *ngIf="talk.acf.youtube_url" [href]="talk.acf.youtube_url" class="btn btn-secondary mt-4">Video</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

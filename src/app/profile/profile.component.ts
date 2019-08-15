@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { WpheadlessService } from '../wpheadless.service';
 @Component({
     selector: 'app-profile',
     templateUrl: './profile.component.html',
@@ -8,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 
 export class ProfileComponent implements OnInit {
 
-    constructor() { }
+    data$ = null;
 
-    ngOnInit() {}
+    constructor(private wp: WpheadlessService) {
+        this.data$ = wp.getData();
+    }
+
+    ngOnInit() { }
 
 }

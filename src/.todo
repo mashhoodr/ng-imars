@@ -1,3 +1,6 @@
+- Lazy Load modules
+- Enable IVY
+- Analyze and remove any unneeded code
 - Blog page
     - Design (list + view)
     - Sync with Wordpress
@@ -13,6 +16,6 @@
     - Configure custom fields in WP
     - Add data in WP
     - Configure the API (GraphQL?)
-- Configure DNS for frontend and WP
+- [x] Configure DNS for frontend and WP
 - Configure GraphQL plugin
 - Checkout Zeit?
